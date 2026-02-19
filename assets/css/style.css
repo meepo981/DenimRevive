@@ -726,27 +726,59 @@ footer {
 
 #cookie-consent {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
+    bottom: 20px;       /* 20px от низа */
+    right: 20px;        /* 20px от правого края */
+    width: auto;        /* не на весь экран */
+    max-width: 400px;   /* ограничение по ширине */
+    background: rgba(0, 0, 0, 0.85);
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 999999;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 #cookie-consent.active {
     display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
-.cookie-box {
-    background: #111;
-    color: #fff;
-    max-width: 400px;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+#decline-cookies {
+    padding: 12px 18px;        /* увеличиваем размер кнопки */
+    min-width: 140px;          /* минимальная ширина, чтобы текст помещался */
+    font-size: 0.85rem;        /* чуть больше шрифт */
+    white-space: normal;       /* разрешаем перенос текста */
+    word-break: break-word;    /* перенос длинных слов */
+    border: 1px solid #555;
+    color: #888;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1 1 auto;            /* позволяет растягиваться, если текст длинный */
 }
+
+
+.cookie-box {
+    background: transparent; /* фон уже в #cookie-consent */
+    color: #fff;
+    max-width: 200%;
+    padding: 0;
+    border-radius: 0;
+    text-align: left;
+}
+.cookie-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: stretch;    /* кнопки одинаковой высоты */
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
 
 #cookie-accept {
     margin-top: 20px;
@@ -778,11 +810,6 @@ footer {
     margin: 0;
 }
 
-.cookie-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
 
 .btn-sm {
     padding: 10px 20px;

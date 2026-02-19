@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Denim Revive | Atelier Amsterdam";
 include "includes/header.php";
+setcookie("my_test_cookie", "hello", time() + 3600, "/");
 ?>
 
 <section class="hero">
